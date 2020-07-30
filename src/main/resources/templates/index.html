@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Recomendor de Filmes</title>
+</head>
+<body>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+
+        </div>
+        <div class="panel-body mx-auto py-md-5" style="width: 95%;">
+            <div class="row">
+                <div class="col-md" th:each="filme : ${filmes}">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text" > Filme Id: <span th:text="${filme.itemID}"></span> </p>
+                            <p>Nota: <span th:text="${#numbers.formatDecimal(filme.value,1,1)}"></span></p>
+                            <a href="#" class="btn btn-primary">Mais Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+
+        </div>
+    </div>
+
+    </body>
+</html>
